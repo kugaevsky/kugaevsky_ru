@@ -37,3 +37,4 @@ gem 'growl'
 # gem 'rb-notifu'
 
 gem 'capistrano'
+gem 'railsless-deploy'
