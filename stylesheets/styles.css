@@ -4,13 +4,19 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 body {
   margin-top: 60px;
-  font-family: "Oranienbaum", serif; }
+  background: #eeeeee;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px; }
 
-p {
-  font-size: 16px;
-  font-family: "Source Sans Pro", sans-serif; }
+h1, h2, h3 {
+  font-family: "Oranienbaum", serif;
+  text-shadow: 1px 1px 0 white; }
 
 .lead {
   font-size: 24px;
   line-height: 36px;
+  text-shadow: 1px 1px 0 white;
   color: #666666; }
+
+.google-plus {
+  margin-bottom: 7px; }

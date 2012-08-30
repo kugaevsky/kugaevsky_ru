@@ -2,17 +2,45 @@
 %html
   %head
     %title Nick Kugaevsky :: Develop. Travel. Fun.
-
     %link{ href: "favicon.ico", rel: "icon", type: "image/ico" }/
-
     %link{ href: "stylesheets/styles.css", rel: "stylesheet", type: "text/css" }/
     %script{ src: "javascripts/scripts.js" }
 
   %body
     .row-fluid
       .container
-        .span2
-          %img.img-polaroid{ alt: "Nick Kugaevsky", src: "images/my-ava.png" }
+        .span3
+          %aside
+            %img.img-polaroid{ alt: "Nick Kugaevsky", src: "images/my-ava-330x330.png" }
         .span4
-          %h1 Nick Kugaevsky
-          %p.lead Develop. Travel. Fun.
+          %section
+            %header
+              %h1 Nick Kugaevsky
+              %p.lead Develop. Travel. Fun.
+            %article
+              %ul
+                %li Frontend engineering
+                %li Ruby on rails full stack development
+        .span4
+          %section
+            %header
+              %h1
+                %small Get social
+            %article
+              %ul.unstyled
+                %li
+                  %a.btn.btn-mini.google-plus{ href: "http://plus.google.com/102962124128326285509?prsrc=3", rel: "publisher", style: "text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;"}
+                    %span{style: "display:inline-block;font-weight:bold;margin-right:1px; margin-top:0px;"} Add to circles
+                    %span{style: "display:inline-block;margin-right:5px; margin-top:0px;"} on
+                    %img{ alt: "Google+", src: "http://ssl.gstatic.com/images/icons/gplus-16.png", style: "border:0;width:16px;height:16px;"}/
+                %li
+                  %a.twitter-follow-button{ href: 'https://twitter.com/kugaevsky', data: { lang: 'en', size: 'normal', 'show-count' => 'true' }} Follow @kugaevsky
+
+
+
+
+
+    / Follow on twitter
+    :javascript
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
