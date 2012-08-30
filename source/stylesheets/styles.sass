@@ -1,5 +1,6 @@
 @import "bootstrap.min.css"
 @import "bootstrap-responsive.min.css"
+// @import "proudify.min.css"
 @import url(http://fonts.googleapis.com/css?family=Oranienbaum&subset=latin,cyrillic)
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro)
 
@@ -38,6 +39,65 @@ h1, h2, h3, h4, .accordion-heading
   border: 1px dotted #aaa
   border-radius: 10px
 
+.proudify
+  ul
+    list-style: none
+    margin-bottom: 20px
+  &.coderwall li
+    float: left
+    margin-right: 10px
+    a
+      display: inline-block
+      border-radius: 50%
+      -webkit-transition: all .5s linear
+      -moz-transition: all .5s linear
+      -o-transition: all .5s linear
+      transition: all .5s linear
+      -webkit-transform: scale(.75, .75)
+      -moz-transform: scale(.75, .75)
+      -o-transform: scale(.75, .75)
+      transform: scale(.75, .75)
+      &:hover
+        box-shadow: 0 0 10px #666
+        -webkit-transform: scale(1, 1)
+        -moz-transform: scale(1, 1)
+        -o-transform: scale(1, 1)
+        transform: scale(1, 1)
+      img
+        height: 200px
+        width: 200px
+  &.github
+    ul
+      margin-left: 0
+    li
+      color: #3A87AD
+      background-color: #D9EDF7
+      padding: 8px 35px 8px 14px
+      margin-bottom: 5px
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5)
+      border: 1px solid #BCE8F1
+      border-radius: 4px
+      a
+        font-weight: bold
+        margin-right: 10px
+      .status
+        float: right
+        font-size: 14px
+        font-weight: bold
+        line-height: 14px
+        color: white
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+        white-space: nowrap
+        vertical-align: baseline
+        background-color: #999
+        padding: 1px 4px 2px
+        border-radius: 3px
+        &.green
+          background-color: #468847
+        &.red
+          background-color: #B94A48
+
+
 footer .navbar
   color: #bbb
 
@@ -45,7 +105,7 @@ footer .navbar
   line-height: 40px
 
 .fame-o-meter
-  opacity: .05
+  opacity: .15
   -webkit-transition: all .5s ease-in-out
   -moz-transition: all .5s ease-in-out
   -o-transition: all .5s ease-in-out

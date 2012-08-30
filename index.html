@@ -86,27 +86,35 @@
             <div class='accordion-group'>
               <div class='accordion-heading'>
                 <a class='accordion-toggle collapsed' data-parent='#fame-accordion' data-toggle='collapse' href='#acc-coderwall'>
-                  Coderwall
+                  <span class='lead'>Coderwall badges</span>
                 </a>
               </div>
               <div class='accordion-body collapse' id='acc-coderwall'>
                 <div class='accordion-inner'>
-                  Coderwall badges
+                  <div id='coderwall-badges'></div>
+                  <div class='clearfix'></div>
                 </div>
               </div>
             </div>
             <div class='accordion-group'>
               <div class='accordion-heading'>
-                <a class='accordion-toggle collapsed' data-parent='#fame-accordion' data-toggle='collapse' href='#acc-codeschool'>
-                  Codeschool
+                <a class='accordion-toggle collapsed' data-parent='#fame-accordion' data-toggle='collapse' href='#acc-github'>
+                  <span class='lead'>Github projects</span>
                 </a>
               </div>
-              <div class='accordion-body collapse' id='acc-codeschool'>
+              <div class='accordion-body collapse' id='acc-github'>
                 <div class='accordion-inner'>
-                  Codeshool badges
+                  <div id='github-projects'></div>
                 </div>
               </div>
             </div>
+            <!-- .accordion-group -->
+            <!-- .accordion-heading -->
+            <!-- %a.accordion-toggle.collapsed{ href: "#acc-codeschool", data: { parent: "#fame-accordion", toggle: "collapse" }} -->
+            <!-- %span.lead Codeschool -->
+            <!-- #acc-codeschool.accordion-body.collapse -->
+            <!-- .accordion-inner -->
+            <!-- Codeshool badges -->
           </div>
         </div>
       </div>
@@ -137,6 +145,7 @@
     </div>
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js'></script>
     <script src='javascripts/bootstrap.min.js'></script>
+    <script src='javascripts/jquery-proudify.min.js'></script>
     <script src='javascripts/scripts.js'></script>
     <!-- Follow on twitter -->
     <script type='text/javascript'>
