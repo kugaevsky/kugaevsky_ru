@@ -4,14 +4,13 @@
     %title Nick Kugaevsky :: Develop. Travel. Fun.
     %link{ href: "favicon.ico", rel: "icon", type: "image/ico" }/
     %link{ href: "stylesheets/styles.css", rel: "stylesheet", type: "text/css" }/
-    %script{ src: "javascripts/scripts.js" }
 
   %body
     .row-fluid
       .container
-        .span3
+        .span3.offset1
           %aside
-            %img.img-polaroid{ alt: "Nick Kugaevsky", src: "images/my-ava-330x330.png" }
+            %img.avatar.img-polaroid{ alt: "Nick Kugaevsky", src: "images/my-ava.png" }
         .span4
           %section
             %header
@@ -21,26 +20,40 @@
               %ul
                 %li Frontend engineering
                 %li Ruby on rails full stack development
-        .span4
+                %li Application design
+                %li Workflow productivity
+        .span3
           %section
             %header
               %h1
                 %small Get social
             %article
-              %ul.unstyled
-                %li
-                  %a.btn.btn-mini.google-plus{ href: "http://plus.google.com/102962124128326285509?prsrc=3", rel: "publisher", style: "text-decoration:none;display:inline-block;color:#333;text-align:center; font:13px/16px arial,sans-serif;white-space:nowrap;"}
-                    %span{style: "display:inline-block;font-weight:bold;margin-right:1px; margin-top:0px;"} Add to circles
-                    %span{style: "display:inline-block;margin-right:5px; margin-top:0px;"} on
-                    %img{ alt: "Google+", src: "http://ssl.gstatic.com/images/icons/gplus-16.png", style: "border:0;width:16px;height:16px;"}/
-                %li
+              %ul.unstyled.social-links
+                %li.twitter
                   %a.twitter-follow-button{ href: 'https://twitter.com/kugaevsky', data: { lang: 'en', size: 'normal', 'show-count' => 'true' }} Follow @kugaevsky
+                %li.google-plus
+                  %a.btn.btn-mini{ href: "http://plus.google.com/102962124128326285509?prsrc=3", rel: "publisher" }
+                    %img{ alt: "Google+", src: "http://ssl.gstatic.com/images/icons/gplus-16.png", style: "border:0;width:16px;height:16px;"}/
+                    Add to Google+ circles
+                %li.linkedin
+                  %a.btn.btn-mini{ href: 'http://www.linkedin.com/pub/nick-kugaevsky/1b/117/395'}
+                    %img{ src: 'https://s3-s.licdn.com/scds/common/u/img/favicon_v3.ico' }
+                    LinkedIn profile
+                %li.github
+                  %a.btn.btn-mini{ href: 'https://github.com/kugaevsky'}
+                    %img{ src: 'https://github.com/favicon.png' }
+                    Projects on github
+                %li.github
+                  %a.btn.btn-mini{ href: 'https://github.com/kugaevsky'}
+                    %img{ src: 'http://cdn.coderwall.com/assets/favicon-7e6bed591eb101ee51bd9c308b42d17b.png' }
+                    Coderwall profile
+              %h2
+                %small
+                  or
+                  %a{ href: 'mailto:nick@kugaevsky.ru' } mail me
 
-
-
-
+    %script{ src: "javascripts/scripts.js" }
 
     / Follow on twitter
     :javascript
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-

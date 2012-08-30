@@ -28,7 +28,7 @@ group :stylesheets do
     watch(%r{^.+\.less$})
   end
 
-  guard 'sass', :input => "#{PATHS[:in]}/stylesheets", :output => "#{PATHS[:out]}/stylesheets"
+  guard 'sass', :input => "#{PATHS[:in]}/stylesheets", :output => "#{PATHS[:out]}/stylesheets", :style => :compressed
 end
 
 # -= Livereload =-
