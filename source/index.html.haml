@@ -27,8 +27,8 @@
             %header
               %h1
                 %small Get social
-            %article
-              %ul.unstyled.social-links
+            %article.social-links
+              %ul.unstyled
                 %li.twitter
                   %a.twitter-follow-button{ href: 'https://twitter.com/kugaevsky', data: { lang: 'en', size: 'normal', 'show-count' => 'true' }} Follow @kugaevsky
                 %li.google-plus
@@ -51,7 +51,26 @@
                 %small
                   or
                   %a{ href: 'mailto:nick@kugaevsky.ru' } mail me
-
+      .row
+        .span12.hall-of-fame.fade
+          %h1
+            Fame-o-meter!
+            %small Why so serious?
+          #fame-accordion.accordion
+            .accordion-group
+              .accordion-heading
+                %a.accordion-toggle.collapsed{ href: "#acc-coderwall", data: { parent: "#fame-accordion", toggle: "collapse" }}
+                  Coderwall
+              #acc-coderwall.accordion-body.collapse
+                .accordion-inner
+                  Coderwall badges
+            .accordion-group
+              .accordion-heading
+                %a.accordion-toggle.collapsed{ href: "#acc-codeschool", data: { parent: "#fame-accordion", toggle: "collapse" }}
+                  Codeschool
+              #acc-codeschool.accordion-body.collapse
+                .accordion-inner
+                  Codeshool badges
 
   %footer
     .navbar.navbar-fixed-bottom
