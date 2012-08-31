@@ -79,18 +79,19 @@
                   .clearfix
             .accordion-group
               .accordion-heading
+                %a.accordion-toggle.collapsed{ href: "#acc-codeschool", data: { parent: "#fame-accordion", toggle: "collapse" }}
+                  %span.lead CodeSchool badges
+              #acc-codeschool.accordion-body.collapse
+                .accordion-inner
+                  #codeschool-badges
+                  .clearfix
+            .accordion-group
+              .accordion-heading
                 %a.accordion-toggle.collapsed{ href: "#acc-github", data: { parent: "#fame-accordion", toggle: "collapse" }}
                   %span.lead Github projects
               #acc-github.accordion-body.collapse
                 .accordion-inner
                   #github-projects
-            / .accordion-group
-            /   .accordion-heading
-            /     %a.accordion-toggle.collapsed{ href: "#acc-codeschool", data: { parent: "#fame-accordion", toggle: "collapse" }}
-            /       %span.lead Codeschool
-            /   #acc-codeschool.accordion-body.collapse
-            /     .accordion-inner
-            /       Codeshool badges
 
     %footer
       .navbar.navbar-fixed-bottom
@@ -105,7 +106,7 @@
                     %button.btn.active{  type: "button", value: "0", data: { toggle: "button" }} OFF
                     %button.btn.btn-primary{ type: "button", value: "1", data: { toggle: "button" }} ON
                 .pull-right
-                  %h3 Fame-o-meter
+                  %h3 Fame-o-meter!
 
     %script{ src: "http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"}
     %script{ src: "javascripts/bootstrap.min.js" }

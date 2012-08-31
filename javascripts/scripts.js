@@ -9,6 +9,10 @@
         return $('.hall-of-fame').addClass('in');
       }
     });
+    $('#codeschool-badges').proudify({
+      'service': 'codeschool',
+      'username': 'kugaevsky'
+    });
     $('#coderwall-badges').proudify({
       'service': 'coderwall',
       'username': 'kugaevsky'
