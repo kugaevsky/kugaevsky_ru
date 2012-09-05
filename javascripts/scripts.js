@@ -3,10 +3,10 @@
   $(function() {
     $('.fame-toggler .btn').click(function() {
       if ($(this).val() === '0') {
-        $('.hall-of-fame').removeClass('in');
+        $('.hall-of-fame').addClass('hidden').removeClass('in');
       }
       if ($(this).val() === '1') {
-        return $('.hall-of-fame').addClass('in');
+        return $('.hall-of-fame').removeClass('hidden').addClass('in');
       }
     });
     $('#codeschool-badges').proudify({

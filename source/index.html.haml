@@ -71,7 +71,7 @@
                   or
                   %a{ href: 'mailto:nick@kugaevsky.ru' } mail me
       .row
-        .span12.hall-of-fame.fade
+        .span12.hall-of-fame.fade.hidden
           %h1
             Fame-o-meter!
             %small Why so serious?
@@ -105,8 +105,11 @@
         .navbar-inner
           .container
             .row
-              .span6.copyright
-                2012 © Nick Kugaevsky
+              .span3.copyright
+                2012 ©
+                %a{ href: 'http://kugaevsky.ru' } Nick Kugaevsky
+              .span3.repo
+                %a{ href: 'https://github.com/kugaevsky/kugaevsky_ru' } Github repo
               .span6.fame-o-meter
                 .pull-right
                   .btn-group.fame-toggler{ data: { toggle: "buttons-radio" }}

@@ -1,7 +1,7 @@
 $ ->
   $('.fame-toggler .btn').click ->
-    $('.hall-of-fame').removeClass('in') if $(@).val() is '0'
-    $('.hall-of-fame').addClass('in') if $(@).val() is '1'
+    $('.hall-of-fame').addClass('hidden').removeClass('in') if $(@).val() is '0'
+    $('.hall-of-fame').removeClass('hidden').addClass('in') if $(@).val() is '1'
 
   $('#codeschool-badges').proudify
     'service': 'codeschool'
