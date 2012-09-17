@@ -1,7 +1,7 @@
 # Kugaevsky.ru
 
 My personal website.
-See it in action on [http://kugaevsky.ru](http://kugaevsky)
+See it in action on [http://kugaevsky.ru](http://kugaevsky.ru)
 
 ## Builded via
 
