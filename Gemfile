@@ -6,7 +6,7 @@ gem 'guard'
 # -= Preprocessors =-
 
 # Template preprocessors
-gem 'guard-haml', github: 'kugaevsky/guard-haml'
+gem 'guard-haml'
 
 # Javascript preprocessors
 gem 'guard-coffeescript'

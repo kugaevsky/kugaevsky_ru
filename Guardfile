@@ -14,8 +14,9 @@ PATHS = { :in => 'source', :out => '.' }
 # -= Guard preprocessors =-
 
 group :templates do
-  guard 'haml', :input => PATHS[:in], :output => PATHS[:out] do
-    watch(/^.+(\.html\.haml)/)
+  guard 'haml', :run_at_start => true, :notifications => true do
+    #watch(/^.+(\.html\.haml)/)
+    watch(/^.+\.html\.haml$/)
   end
 end
 

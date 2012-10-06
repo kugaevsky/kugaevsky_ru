@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/kugaevsky/guard-haml.git
-  revision: 3bd04111163e1faf4f26c000f6c975e596a42b8f
-  specs:
-    guard-haml (0.4)
-      guard (>= 1.1)
-      haml (>= 3.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -35,6 +27,9 @@ GEM
     guard-coffeescript (1.2.0)
       coffee-script (>= 2.2.0)
       guard (>= 1.1.0)
+    guard-haml (0.4)
+      guard (>= 1.1)
+      haml (>= 3.0)
     guard-less (0.1.2)
       guard (>= 0.2.2)
       less (~> 2.1.0)
@@ -82,7 +77,7 @@ DEPENDENCIES
   growl
   guard
   guard-coffeescript
-  guard-haml!
+  guard-haml
   guard-less
   guard-livereload
   guard-sass
