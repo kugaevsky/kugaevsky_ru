@@ -30,7 +30,6 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
-    railsless-deploy (1.0.2)
     rdiscount (2.0.7.1)
     sass (3.2.7)
     sinatra (1.4.2)
@@ -51,7 +50,6 @@ DEPENDENCIES
   coffee-script
   haml
   logger
-  railsless-deploy
   rdiscount
   sass
   sinatra
