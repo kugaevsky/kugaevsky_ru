@@ -1,0 +1,65 @@
+!!! 5
+%html
+  %head
+    %title Nick Kugaevsky :: Develop. Travel. Fun.
+
+    %meta{ name: "description", content: "Nick Kugaevsky. Frontend engineering. Ruby on rails full stack development.  Application design. Workflow productivity" }/
+    %meta{ name: "keywords", content: "HTML,CSS,JavaScript,Ruby on Rails,Frontend development,Workflow"}/
+    %meta{ name: "author", content: "Nick Kugaevsky" }/
+    %meta{ charset: "UTF-8"}/
+    %meta{ name: "robots", content: "all" }/
+
+    %link{ href: "favicon.ico", rel: "icon", type: "image/ico" }/
+    %link{ href: "/vendor/stylesheets/bootstrap.min.css", rel: "stylesheet", type: "text/css" }/
+    %link{ href: "/vendor/stylesheets/font-awesome.min.css", rel: "stylesheet", type: "text/css" }/
+    %link{ href: "/styles.css", rel: "stylesheet", type: "text/css" }/
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-2540348-8']);
+      _gaq.push(['_setDomainName', 'kugaevsky.ru']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+  %body
+
+    = yield
+
+    %footer
+      .navbar.navbar-fixed-bottom
+        .navbar-inner
+          .container
+            .row
+              .span3.copyright
+                2012 — 2013 ©
+                %a{ href: 'http://kugaevsky.ru' } Nick Kugaevsky
+              .span3.repo
+                %a{ href: 'https://github.com/kugaevsky/kugaevsky_ru' } Github repo
+              .span6.fame-o-meter
+                .pull-right
+                  .btn-group.fame-toggler{ data: { toggle: "buttons-radio" }}
+                    %button.btn.active{  type: "button", value: "0", data: { toggle: "button" }} OFF
+                    %button.btn.btn-primary{ type: "button", value: "1", data: { toggle: "button" }} ON
+                .pull-right
+                  %h3 Fame-o-meter!
+
+    %script{ src: "/vendor/javascripts/jquery-1.9.1.min.js"}
+    %script{ src: "/vendor/javascripts/bootstrap.min.js" }
+    %script{ src: '/vendor/javascripts/jquery-proudify.min.js' }
+    %script{ src: "/scripts.js" }
+
+    / Follow on twitter
+    :javascript
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+    / Yandex.Metrika counter
+    :javascript
+      (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter152873 = new Ya.Metrika({id:152873, clickmap:true, webvisor:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f); } else { f(); } })(document, window, "yandex_metrika_callbacks");
+    %noscript
+      %div
+        %img{alt: "", src: "//mc.yandex.ru/watch/152873", style: "position:absolute; left:-9999px;"}/
