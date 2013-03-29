@@ -8,7 +8,6 @@ set :rvm_ruby_string, "default@#{application}"
 set :rvm_type, :system
 
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 set :deploy_via, :remote_cache
 
