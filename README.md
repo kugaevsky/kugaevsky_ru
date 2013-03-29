@@ -11,4 +11,4 @@ See it in action on [http://kugaevsky.ru](http://kugaevsky.ru)
 
 ## License
 
-Nope
+Beer and pizza license
