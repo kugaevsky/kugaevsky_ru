@@ -17,3 +17,4 @@ gem 'logger'
 
 # Deployment
 gem 'capistrano'
+gem 'rvm-capistrano'
