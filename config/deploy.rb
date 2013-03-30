@@ -37,6 +37,7 @@ namespace :deploy do
   end
 
   namespace :assets do
-  task :precompile, :roles => :web, :except => { :no_release => true } do
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+    end
   end
 end
