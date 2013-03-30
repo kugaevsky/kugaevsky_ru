@@ -35,4 +35,8 @@ namespace :deploy do
     deploy.update
     deploy.start
   end
+
+  namespace :assets do
+  task :precompile, :roles => :web, :except => { :no_release => true } do
+  end
 end
