@@ -1,4 +1,3 @@
-require "rvm/capistrano"
 require 'bundler/capistrano'
 
 set :application, "kugaevsky.ru"
@@ -6,6 +5,8 @@ set :repository,  "git@github.com:kugaevsky/kugaevsky_ru.git"
 
 set :rvm_ruby_string, "default@#{application}"
 set :rvm_type, :system
+
+require "rvm/capistrano"
 
 set :scm, :git
 
