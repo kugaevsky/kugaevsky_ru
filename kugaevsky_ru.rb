@@ -44,7 +44,7 @@ class KugaevskyRu < Sinatra::Base
 
   after do
     @res ||= response.body
-    settings.cache.set(request.url, @res, nil, raw: true) unless settings.cache.get(request.url)
+    settings.cache.set(request.url, @res) unless settings.cache.get(request.url)
   end
 
   # Display login page
