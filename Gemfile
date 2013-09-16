@@ -10,7 +10,7 @@ gem 'coffee-script'
 gem 'rdiscount'
 
 # Web server
-gem 'thin'
+gem 'puma'
 
 # Logging
 gem 'logger'
@@ -18,3 +18,4 @@ gem 'logger'
 # Deployment
 gem 'capistrano'
 gem 'rvm-capistrano'
+gem 'dalli'

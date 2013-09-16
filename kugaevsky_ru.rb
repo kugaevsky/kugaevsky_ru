@@ -4,6 +4,7 @@ require 'sass'
 require 'coffee-script'
 require 'rdiscount'
 require 'json'
+require 'dalli'
 
 # Sinatra based web UI
 class KugaevskyRu < Sinatra::Base
@@ -30,6 +31,10 @@ class KugaevskyRu < Sinatra::Base
   # Turn on logging and set log level to dedug for development environment
   set :logging, false
 
+  set :dc, Dalli::Client.new('localhost:11211',
+                              namespace: 'kugaevsky.ru',
+                              compress: true)
+
   configure :development do
     set :logging, true
   end
@@ -44,7 +49,13 @@ class KugaevskyRu < Sinatra::Base
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    haml :index
+    if res = settings.dc.get(request.url)
+      res
+    else
+      res = haml(:index)
+      settings.dc.set(request.url, res)
+      res
+    end
   end
 
   # @method get_coffee
