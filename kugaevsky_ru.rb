@@ -43,7 +43,7 @@ class KugaevskyRu < Sinatra::Base
   end
 
   after do
-    @res ||= response
+    @res ||= response.body
     settings.cache.set(request.url, @res, nil, raw: true) unless settings.cache.get(request.url)
   end
 
