@@ -31,8 +31,8 @@ class KugaevskyRu < Sinatra::Base
   # Turn on logging and set log level to dedug for development environment
   set :logging, false
 
-  set :dc, Dalli::Client.new('localhost:11211',
-                              namespace: 'kugaevsky.ru')
+  set :cache, Dalli::Client.new( 'localhost:11211',
+                                  namespace: 'kugaevsky.ru')
 
   configure :development do
     set :logging, true
@@ -44,9 +44,9 @@ class KugaevskyRu < Sinatra::Base
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    unless @res = settings.dc.get(request.url)
+    unless @res = settings.cache.get(request.url)
       @res = haml(:index)
-      settings.dc.set(request.url, @res)
+      settings.cache.set(request.url, @res, nil, raw: true)
     end
     puts headers
     @res
