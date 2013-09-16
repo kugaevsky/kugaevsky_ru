@@ -43,7 +43,6 @@ class KugaevskyRu < Sinatra::Base
   end
 
   after do
-    @res ||= response.body[0].to_s.gsub("\n","")
     settings.cache.set(request.url, @res, nil, raw: true) unless settings.cache.get(request.url)
   end
 
@@ -53,18 +52,18 @@ class KugaevskyRu < Sinatra::Base
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    haml(:index)
+    @res ||= haml(:index)
   end
 
   # @method get_coffee
   # Render coffeescripts
   get "/scripts.js" do
-    coffee(:scripts)
+    @res ||= coffee(:scripts)
   end
 
   # @method get_sass
   # Render SASS styles
   get "/styles.css" do
-    sass(:styles)
+    @res ||= sass(:styles)
   end
 end
