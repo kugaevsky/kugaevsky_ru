@@ -32,8 +32,7 @@ class KugaevskyRu < Sinatra::Base
   set :logging, false
 
   set :dc, Dalli::Client.new('localhost:11211',
-                              namespace: 'kugaevsky.ru',
-                              serialize: :raw)
+                              namespace: 'kugaevsky.ru')
 
   configure :development do
     set :logging, true
@@ -47,7 +46,7 @@ class KugaevskyRu < Sinatra::Base
   get '/' do
     unless @res = settings.dc.get(request.url)
       @res = haml(:index)
-      settings.dc.set(request.url, Marshal.dump(@res))
+      settings.dc.set(request.url, @res, raw: true)
     end
     puts headers
     @res
