@@ -47,7 +47,7 @@ class KugaevskyRu < Sinatra::Base
   get '/' do
     unless @res = settings.dc.get(request.url)
       @res = haml(:index)
-      settings.dc.set(request.url, @res)
+      settings.dc.set(request.url, Marshal.dump(@res))
     end
     puts headers
     @res
