@@ -32,7 +32,8 @@ class KugaevskyRu < Sinatra::Base
   set :logging, false
 
   set :dc, Dalli::Client.new('localhost:11211',
-                              namespace: 'kugaevsky.ru')
+                              namespace: 'kugaevsky.ru',
+                              serialize: :raw)
 
   configure :development do
     set :logging, true
