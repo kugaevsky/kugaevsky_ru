@@ -32,15 +32,10 @@ class KugaevskyRu < Sinatra::Base
   set :logging, false
 
   set :dc, Dalli::Client.new('localhost:11211',
-                              namespace: 'kugaevsky.ru',
-                              compress: true)
+                              namespace: 'kugaevsky.ru')
 
   configure :development do
     set :logging, true
-  end
-
-  before do
-
   end
 
   # Display login page
@@ -49,13 +44,12 @@ class KugaevskyRu < Sinatra::Base
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    if res = settings.dc.get(request.url)
-      res
-    else
-      res = haml(:index)
-      settings.dc.set(request.url, res)
-      res
+    unless @res = settings.dc.get(request.url)
+      @res = haml(:index)
+      settings.dc.set(request.url, @res)
     end
+    puts headers
+    @res
   end
 
   # @method get_coffee
