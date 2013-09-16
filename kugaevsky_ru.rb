@@ -43,7 +43,7 @@ class KugaevskyRu < Sinatra::Base
   end
 
   after do
-    @res ||= response.body.to_s.delete("\n")
+    @res ||= response.body.to_json
     settings.cache.set(request.url, @res, nil, raw: true) unless settings.cache.get(request.url)
   end
 
