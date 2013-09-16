@@ -38,29 +38,33 @@ class KugaevskyRu < Sinatra::Base
     set :logging, true
   end
 
+  before do
+    @res = settings.cache.get(request.url)
+  end
+
+  after do
+    @res ||= response
+    settings.cache.set(request.url, @res, nil, raw: true) unless settings.cache.get(request.url)
+  end
+
   # Display login page
   #
   # @macro [attach] sinatra.get
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    unless @res = settings.cache.get(request.url)
-      @res = haml(:index)
-      settings.cache.set(request.url, @res, nil, raw: true)
-    end
-    puts headers
-    @res
+    haml(:index)
   end
 
   # @method get_coffee
   # Render coffeescripts
   get "/scripts.js" do
-    coffee :scripts
+    coffee(:scripts)
   end
 
   # @method get_sass
   # Render SASS styles
   get "/styles.css" do
-    sass :styles
+    sass(:styles)
   end
 end
