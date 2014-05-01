@@ -52,18 +52,21 @@ class KugaevskyRu < Sinatra::Base
   #   @overload get "$1"
   # @method get_root
   get '/' do
-    @res ||= haml(:index)
+    # @res ||= haml(:index)
+    haml(:index)
   end
 
   # @method get_coffee
   # Render coffeescripts
   get "/scripts.js" do
-    @res ||= coffee(:scripts)
+    # @res ||= coffee(:scripts)
+    coffee(:scripts)
   end
 
   # @method get_sass
   # Render SASS styles
   get "/styles.css" do
-    @res ||= sass(:styles)
+    # @res ||= sass(:styles)
+    sass(:styles)
   end
 end
