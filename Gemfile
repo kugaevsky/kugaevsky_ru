@@ -17,5 +17,6 @@ gem 'logger'
 
 # Deployment
 gem 'capistrano'
-gem 'rvm-capistrano'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler'
 gem 'dalli'

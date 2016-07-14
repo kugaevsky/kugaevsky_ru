@@ -1,44 +1,50 @@
-require 'bundler/capistrano'
+# config valid only for current version of Capistrano
+lock '3.5.0'
 
-set :application, "kugaevsky.ru"
-set :repository,  "git@github.com:kugaevsky/kugaevsky_ru.git"
+set :application, 'kugaevsky.ru'
+set :repo_url, 'git@github.com:kugaevsky/kugaevsky_ru.git'
 
-set :rvm_ruby_string, "default@#{application}"
-set :rvm_type, :system
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-require "rvm/capistrano"
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/var/www/#{fetch(:application)}"
 
-set :scm, :git
+# Default value for :scm is :git
+# set :scm, :git
 
-set :deploy_via, :remote_cache
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
 
-set :deploy_to, "/var/www/#{application}"
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
+
+# Default value for :pty is false
+# set :pty, true
+
+# Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push('config/newrelic.yml')
+
+# Default value for linked_dirs is []
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
 set :keep_releases, 5
 
-set :user, "nick"
-set :use_sudo, false
-
-role :web, "198.199.64.150"                   # Your HTTP server, Apache/etc
-role :app, "198.199.64.150"                   # This may be the same as your `Web` server
-role :db,  "198.199.64.150", :primary => true # This is where Rails migrations will run
+set :rvm_ruby_version, "2.3.1@#{fetch(:application)}"
 
 
 namespace :deploy do
   %w(start stop restart up down hup).each do |action|
-    desc "#{action.capitalize} #{application} application server"
-    task action.to_sym, roles: :app, except: { no_release: true } do
-      run "sv #{action} #{application}"
-    end
-  end
-
-  # This will make sure that Capistrano doesn't try to run rake:migrate (this is not a Rails project!)
-  task :cold do
-    deploy.update
-    deploy.start
-  end
-
-  namespace :assets do
-    task :precompile, :roles => :web, :except => { :no_release => true } do
+    desc "#{action.capitalize} #{fetch(:application)} application server"
+    on roles(:web) do
+      task action.to_sym, roles: :app, except: { no_release: true } do
+        run "sv #{action} #{application}"
+      end
     end
   end
 end
